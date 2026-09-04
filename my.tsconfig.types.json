@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "target": "ESNext",
+        "module": "NodeNext",
+        "emitDeclarationOnly": true,
+        "declaration": true,
+        "outDir": "./dist/types-temp",
+        "rootDir": ".",
+        "declarationMap": false,
+        "lib": ["ESNext", "DOM", "ES2023"],
+        "moduleResolution": "NodeNext",
+        "stripInternal": false
+    },
+    "include": ["src/**/*.js"],
+    "exclude": ["node_modules"]
+}

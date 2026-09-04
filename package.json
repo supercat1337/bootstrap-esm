@@ -1,0 +1,55 @@
+{
+    "name": "@supercat1337/bootstrap-esm",
+    "version": "5.3.0",
+    "description": "Bootstrap as ESM modules with proper tree-shaking support",
+    "type": "module",
+    "main": "./dist/index.esm.js",
+    "module": "./dist/index.esm.js",
+    "types": "./dist/types.d.ts",
+    "files": [
+        "dist",
+        "LICENSE"
+        
+    ],
+    "scripts": {
+        "build": "npm run clean && npm run build_esm && npm run create_types",
+        "create_types": "tsc --project my.tsconfig.types.json && npm run bundle_types && shx rm -rf dist/types-temp",
+        "bundle_types": "node scripts/bundle-types.js",
+        "build_esm": "node ./scripts/build.js",
+        "clean": "shx rm -rf ./dist && shx mkdir ./dist"
+    },
+    "peerDependencies": {
+        "@popperjs/core": "^2.11.8"
+    },
+    "devDependencies": {
+        "@popperjs/core": "^2.11.8",
+        "esbuild": "^0.28.2",
+        "shx": "^0.4.0"
+    },
+    "exports": {
+        ".": {
+            "types": "./dist/types.d.ts",
+            "import": "./dist/index.esm.js"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/supercat1337/bootstrap-esm"
+    },
+    "homepage": "https://github.com/supercat1337/bootstrap-esm#readme",
+    "bugs": {
+        "url": "https://github.com/supercat1337/bootstrap-esm/issues"
+    },
+    "keywords": [
+        "bootstrap",
+        "esm",
+        "tree-shaking",
+        "modules",
+        "ui",
+        "components"
+    ],
+    "author": {
+        "name": "Albert Bazaleev"
+    },
+    "license": "MIT"
+}
