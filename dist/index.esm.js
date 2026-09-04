@@ -1418,7 +1418,7 @@ defineJQueryPlugin(Collapse);
 var collapse_default = Collapse;
 
 // src/dropdown.js
-import * as Popper from "@popperjs/core";
+import * as Popper from "@popperjs/core/dist/esm/index.js";
 var NAME6 = "dropdown";
 var DATA_KEY5 = "bs.dropdown";
 var EVENT_KEY6 = `.${DATA_KEY5}`;
@@ -2451,7 +2451,7 @@ defineJQueryPlugin(Offcanvas);
 var offcanvas_default = Offcanvas;
 
 // src/tooltip.js
-import * as Popper2 from "@popperjs/core";
+import * as Popper2 from "@popperjs/core/dist/esm/index.js";
 
 // src/util/sanitizer.js
 var ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i;
