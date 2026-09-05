@@ -126,7 +126,6 @@
     },
     "devDependencies": {
         "@popperjs/core": "^2.11.8",
-        "esbuild": "^0.28.2",
         "shx": "^0.4.0"
     },
     "author": {
