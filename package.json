@@ -1,6 +1,6 @@
 {
     "name": "@supercat1337/bootstrap-esm",
-    "version": "5.3.8",
+    "version": "5.3.9",
     "description": "Bootstrap as ESM modules with proper tree-shaking support",
     "type": "module",
     "main": "./src/index.js",
@@ -63,39 +63,30 @@
             "import": "./src/tooltip.js"
         },
         "./init/alert": {
-            "types": "./dist/types.d.ts",
             "import": "./src/init/alert.js"
         },
         "./init/button": {
-            "types": "./dist/types.d.ts",
             "import": "./src/init/button.js"
         },
         "./init/carousel": {
-            "types": "./dist/types.d.ts",
             "import": "./src/init/carousel.js"
         },
         "./init/collapse": {
-            "types": "./dist/types.d.ts",
             "import": "./src/init/collapse.js"
         },
         "./init/dropdown": {
-            "types": "./dist/types.d.ts",
             "import": "./src/init/dropdown.js"
         },
         "./init/modal": {
-            "types": "./dist/types.d.ts",
             "import": "./src/init/modal.js"
         },
         "./init/offcanvas": {
-            "types": "./dist/types.d.ts",
             "import": "./src/init/offcanvas.js"
         },
         "./init/popover": {
-            "types": "./dist/types.d.ts",
             "import": "./src/init/popover.js"
         },
         "./init/scrollspy": {
-            "types": "./dist/types.d.ts",
             "import": "./src/init/scrollspy.js"
         },
         "./init/tab": {
@@ -103,11 +94,9 @@
             "import": "./src/init/tab.js"
         },
         "./init/toast": {
-            "types": "./dist/types.d.ts",
             "import": "./src/init/toast.js"
         },
         "./init/tooltip": {
-            "types": "./dist/types.d.ts",
             "import": "./src/init/tooltip.js"
         }
     },
