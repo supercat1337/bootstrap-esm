@@ -7,10 +7,8 @@
 
 import BaseComponent from './base-component.js'
 import EventHandler from './dom/event-handler.js'
-import Manipulator from './dom/manipulator.js'
 import SelectorEngine from './dom/selector-engine.js'
 import {
-  defineJQueryPlugin,
   getNextActiveElement,
   isRTL,
   isVisible,
@@ -424,51 +422,5 @@ class Carousel extends BaseComponent {
     })
   }
 }
-
-/**
- * Data API implementation
- */
-
-EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_SLIDE, function (event) {
-  const target = SelectorEngine.getElementFromSelector(this)
-
-  if (!target || !target.classList.contains(CLASS_NAME_CAROUSEL)) {
-    return
-  }
-
-  event.preventDefault()
-
-  const carousel = Carousel.getOrCreateInstance(target)
-  const slideIndex = this.getAttribute('data-bs-slide-to')
-
-  if (slideIndex) {
-    carousel.to(slideIndex)
-    carousel._maybeEnableCycle()
-    return
-  }
-
-  if (Manipulator.getDataAttribute(this, 'slide') === 'next') {
-    carousel.next()
-    carousel._maybeEnableCycle()
-    return
-  }
-
-  carousel.prev()
-  carousel._maybeEnableCycle()
-})
-
-EventHandler.on(window, EVENT_LOAD_DATA_API, () => {
-  const carousels = SelectorEngine.find(SELECTOR_DATA_RIDE)
-
-  for (const carousel of carousels) {
-    Carousel.getOrCreateInstance(carousel)
-  }
-})
-
-/**
- * jQuery
- */
-
-defineJQueryPlugin(Carousel)
 
 export default Carousel

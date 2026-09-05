@@ -88,10 +88,4 @@ class Popover extends Tooltip {
   }
 }
 
-/**
- * jQuery
- */
-
-defineJQueryPlugin(Popover)
-
 export default Popover

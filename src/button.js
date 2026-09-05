@@ -6,8 +6,6 @@
  */
 
 import BaseComponent from './base-component.js'
-import EventHandler from './dom/event-handler.js'
-import { defineJQueryPlugin } from './util/index.js'
 
 /**
  * Constants
@@ -50,23 +48,5 @@ class Button extends BaseComponent {
   }
 }
 
-/**
- * Data API implementation
- */
-
-EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, event => {
-  event.preventDefault()
-
-  const button = event.target.closest(SELECTOR_DATA_TOGGLE)
-  const data = Button.getOrCreateInstance(button)
-
-  data.toggle()
-})
-
-/**
- * jQuery
- */
-
-defineJQueryPlugin(Button)
 
 export default Button

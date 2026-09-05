@@ -10,7 +10,7 @@ import BaseComponent from './base-component.js'
 import EventHandler from './dom/event-handler.js'
 import Manipulator from './dom/manipulator.js'
 import {
-  defineJQueryPlugin, execute, findShadowRoot, getElement, getUID, isRTL, noop
+  execute, findShadowRoot, getElement, getUID, isRTL, noop
 } from './util/index.js'
 import { DefaultAllowlist } from './util/sanitizer.js'
 import TemplateFactory from './util/template-factory.js'
@@ -623,11 +623,5 @@ class Tooltip extends BaseComponent {
     })
   }
 }
-
-/**
- * jQuery
- */
-
-defineJQueryPlugin(Tooltip)
 
 export default Tooltip

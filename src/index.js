@@ -1,4 +1,3 @@
-// @ts-check
 
 export { default as Alert } from "./alert.js";
 export { default as Button } from "./button.js";

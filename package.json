@@ -1,21 +1,124 @@
 {
     "name": "@supercat1337/bootstrap-esm",
-    "version": "5.3.0",
+    "version": "5.3.8-esm.1",
     "description": "Bootstrap as ESM modules with proper tree-shaking support",
     "type": "module",
-    "main": "./dist/index.esm.js",
-    "module": "./dist/index.esm.js",
+    "main": "./src/index.js",
+    "module": "./src/index.js",
     "types": "./dist/types.d.ts",
+    "sideEffects": [
+        "src/init/**/*.js"
+    ],
+    "exports": {
+        ".": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/index.js"
+        },
+        "./alert": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/alert.js"
+        },
+        "./button": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/button.js"
+        },
+        "./carousel": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/carousel.js"
+        },
+        "./collapse": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/collapse.js"
+        },
+        "./dropdown": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/dropdown.js"
+        },
+        "./modal": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/modal.js"
+        },
+        "./offcanvas": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/offcanvas.js"
+        },
+        "./popover": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/popover.js"
+        },
+        "./scrollspy": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/scrollspy.js"
+        },
+        "./tab": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/tab.js"
+        },
+        "./toast": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/toast.js"
+        },
+        "./tooltip": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/tooltip.js"
+        },
+        "./init/alert": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/init/alert.js"
+        },
+        "./init/button": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/init/button.js"
+        },
+        "./init/carousel": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/init/carousel.js"
+        },
+        "./init/collapse": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/init/collapse.js"
+        },
+        "./init/dropdown": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/init/dropdown.js"
+        },
+        "./init/modal": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/init/modal.js"
+        },
+        "./init/offcanvas": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/init/offcanvas.js"
+        },
+        "./init/popover": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/init/popover.js"
+        },
+        "./init/scrollspy": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/init/scrollspy.js"
+        },
+        "./init/tab": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/init/tab.js"
+        },
+        "./init/toast": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/init/toast.js"
+        },
+        "./init/tooltip": {
+            "types": "./dist/types.d.ts",
+            "import": "./src/init/tooltip.js"
+        }
+    },
     "files": [
-        "dist",
-        "LICENSE"
-        
+        "src",
+        "dist"
     ],
     "scripts": {
-        "build": "npm run clean && npm run build_esm && npm run create_types",
+        "build": "npm run clean && npm run create_types",
         "create_types": "tsc --project my.tsconfig.types.json && npm run bundle_types && shx rm -rf dist/types-temp",
         "bundle_types": "node scripts/bundle-types.js",
-        "build_esm": "node ./scripts/build.js",
         "clean": "shx rm -rf ./dist && shx mkdir ./dist"
     },
     "peerDependencies": {
@@ -26,28 +129,6 @@
         "esbuild": "^0.28.2",
         "shx": "^0.4.0"
     },
-    "exports": {
-        ".": {
-            "types": "./dist/types.d.ts",
-            "import": "./dist/index.esm.js"
-        }
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/supercat1337/bootstrap-esm"
-    },
-    "homepage": "https://github.com/supercat1337/bootstrap-esm#readme",
-    "bugs": {
-        "url": "https://github.com/supercat1337/bootstrap-esm/issues"
-    },
-    "keywords": [
-        "bootstrap",
-        "esm",
-        "tree-shaking",
-        "modules",
-        "ui",
-        "components"
-    ],
     "author": {
         "name": "Albert Bazaleev"
     },

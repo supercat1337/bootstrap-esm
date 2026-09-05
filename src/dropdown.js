@@ -433,23 +433,4 @@ class Dropdown extends BaseComponent {
   }
 }
 
-/**
- * Data API implementation
- */
-
-EventHandler.on(document, EVENT_KEYDOWN_DATA_API, SELECTOR_DATA_TOGGLE, Dropdown.dataApiKeydownHandler)
-EventHandler.on(document, EVENT_KEYDOWN_DATA_API, SELECTOR_MENU, Dropdown.dataApiKeydownHandler)
-EventHandler.on(document, EVENT_CLICK_DATA_API, Dropdown.clearMenus)
-EventHandler.on(document, EVENT_KEYUP_DATA_API, Dropdown.clearMenus)
-EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
-  event.preventDefault()
-  Dropdown.getOrCreateInstance(this).toggle()
-})
-
-/**
- * jQuery
- */
-
-defineJQueryPlugin(Dropdown)
-
 export default Dropdown

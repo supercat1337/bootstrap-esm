@@ -9,7 +9,7 @@ import BaseComponent from './base-component.js'
 import EventHandler from './dom/event-handler.js'
 import SelectorEngine from './dom/selector-engine.js'
 import {
-  defineJQueryPlugin, getElement, isDisabled, isVisible
+  getElement, isDisabled, isVisible
 } from './util/index.js'
 
 /**
@@ -277,20 +277,5 @@ class ScrollSpy extends BaseComponent {
   }
 }
 
-/**
- * Data API implementation
- */
-
-EventHandler.on(window, EVENT_LOAD_DATA_API, () => {
-  for (const spy of SelectorEngine.find(SELECTOR_DATA_SPY)) {
-    ScrollSpy.getOrCreateInstance(spy)
-  }
-})
-
-/**
- * jQuery
- */
-
-defineJQueryPlugin(ScrollSpy)
 
 export default ScrollSpy

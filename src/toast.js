@@ -7,8 +7,7 @@
 
 import BaseComponent from './base-component.js'
 import EventHandler from './dom/event-handler.js'
-import { enableDismissTrigger } from './util/component-functions.js'
-import { defineJQueryPlugin, reflow } from './util/index.js'
+import { reflow } from './util/index.js'
 
 /**
  * Constants
@@ -209,16 +208,5 @@ class Toast extends BaseComponent {
   }
 }
 
-/**
- * Data API implementation
- */
-
-enableDismissTrigger(Toast)
-
-/**
- * jQuery
- */
-
-defineJQueryPlugin(Toast)
 
 export default Toast

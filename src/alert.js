@@ -7,8 +7,6 @@
 
 import BaseComponent from './base-component.js'
 import EventHandler from './dom/event-handler.js'
-import { enableDismissTrigger } from './util/component-functions.js'
-import { defineJQueryPlugin } from './util/index.js'
 
 /**
  * Constants
@@ -71,17 +69,5 @@ class Alert extends BaseComponent {
     })
   }
 }
-
-/**
- * Data API implementation
- */
-
-enableDismissTrigger(Alert, 'close')
-
-/**
- * jQuery
- */
-
-defineJQueryPlugin(Alert)
 
 export default Alert
