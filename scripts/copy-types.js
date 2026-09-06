@@ -1,5 +1,3 @@
-// @ts-check
-
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'node:url';
@@ -12,6 +10,10 @@ const TYPES_SRC = path.join(ROOT, 'node_modules/@types/bootstrap/js/dist');
 const TYPES_DEST = path.join(ROOT, 'dist/types');
 const DIST_ROOT = path.join(ROOT, 'dist');
 
+/**
+ * List of component names (without extension).
+ * These correspond to files in @types/bootstrap/js/dist/.
+ */
 const COMPONENTS = [
     'alert',
     'button',
@@ -28,7 +30,7 @@ const COMPONENTS = [
 ];
 
 /**
- * Ensures a directory exists; creates it if necessary.
+ * Ensures a directory exists, creating it recursively if needed.
  * @param {string} dir - The directory path.
  */
 function ensureDir(dir) {
@@ -39,7 +41,7 @@ function ensureDir(dir) {
 
 /**
  * Capitalizes the first letter of a string.
- * @param {string} str - The string to capitalize.
+ * @param {string} str - Input string.
  * @returns {string} The capitalized string.
  */
 function capitalize(str) {
@@ -47,21 +49,24 @@ function capitalize(str) {
 }
 
 /**
- * Main function: copies type definitions from @types/bootstrap and creates re-export files.
+ * Main function:
+ * - Copies all .d.ts files from @types/bootstrap/js/dist/ to dist/types/
+ * - Creates re-export files for each component with explicit .ts extension
+ * - Creates dist/index.d.ts with named exports using .ts extension
  */
 function copyTypes() {
-    // Validate that @types/bootstrap is installed
+    // Check that @types/bootstrap is installed
     if (!fs.existsSync(TYPES_SRC)) {
         console.error(`@types/bootstrap not found at ${TYPES_SRC}`);
         console.error('Please run: npm install --save-dev @types/bootstrap');
         process.exit(1);
     }
 
-    // Ensure target directories exist
+    // Create destination directories
     ensureDir(TYPES_DEST);
     ensureDir(DIST_ROOT);
 
-    // Copy all .d.ts files from the source to the destination
+    // Copy all .d.ts files from source to dist/types/
     const files = fs.readdirSync(TYPES_SRC).filter(f => f.endsWith('.d.ts'));
     for (const file of files) {
         const srcPath = path.join(TYPES_SRC, file);
@@ -70,17 +75,18 @@ function copyTypes() {
         console.log(`Copied ${file}`);
     }
 
-    // Create re-export files for each component
+    // Create re-export files for each component (default export) with .ts extension
     for (const component of COMPONENTS) {
         const exportPath = path.join(DIST_ROOT, `${component}.d.ts`);
-        const content = `export { default } from './types/${component}';\n`;
+        // Use explicit .ts extension to avoid resolution issues in VS Code
+        const content = `export { default } from './types/${component}.ts';\n`;
         fs.writeFileSync(exportPath, content);
         console.log(`Created ${component}.d.ts`);
     }
 
-    // Create the main index.d.ts that re-exports component classes
+    // Create the main index.d.ts with named exports and .ts extension
     const componentExports = COMPONENTS.map(
-        c => `export { default as ${capitalize(c)} } from './types/${c}';`
+        c => `export { default as ${capitalize(c)} } from './types/${c}.ts';`
     ).join('\n');
 
     const indexContent = [
@@ -88,12 +94,11 @@ function copyTypes() {
         componentExports,
         '',
         '// Re-export common types from base-component',
-        "export type { GetInstanceFactory, GetOrCreateInstanceFactory, ComponentOptions } from './types/base-component';",
+        "export type { GetInstanceFactory, GetOrCreateInstanceFactory, ComponentOptions } from './types/base-component.ts';",
     ].join('\n');
 
     fs.writeFileSync(path.join(DIST_ROOT, 'index.d.ts'), indexContent);
     console.log('Created index.d.ts');
 }
 
-// Execute the function
 copyTypes();

@@ -1,1 +1,1 @@
-export { default } from './types/button';
+export { default } from './types/button.ts';

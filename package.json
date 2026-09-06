@@ -1,138 +1,138 @@
 {
-  "name": "@supercat1337/bootstrap-esm",
-  "version": "5.3.10",
-  "description": "Bootstrap as native ESM modules with true tree-shaking and full TypeScript support",
-  "type": "module",
-  "main": "./src/index.js",
-  "module": "./src/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "scripts": {
-    "build": "npm run clean && npm run copy-types",
-    "copy-types": "node scripts/copy-types.js",
-    "clean": "shx rm -rf ./dist && shx mkdir ./dist"
-  },
-  "peerDependencies": {
-    "@popperjs/core": "^2.11.8"
-  },
-  "devDependencies": {
-    "@popperjs/core": "^2.11.8",
-    "@types/bootstrap": "^5.2.10",
-    "shx": "^0.4.0"
-  },
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./src/index.js"
+    "name": "@supercat1337/bootstrap-esm",
+    "version": "5.3.11",
+    "description": "Bootstrap as native ESM modules with true tree-shaking and full TypeScript support",
+    "type": "module",
+    "main": "./src/index.js",
+    "module": "./src/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist",
+        "src"
+    ],
+    "scripts": {
+        "build": "npm run clean && npm run copy-types",
+        "copy-types": "node scripts/copy-types.js",
+        "clean": "shx rm -rf ./dist && shx mkdir ./dist"
     },
-    "./alert": {
-      "types": "./dist/alert.d.ts",
-      "import": "./src/alert.js"
+    "peerDependencies": {
+        "@popperjs/core": "^2.11.8"
     },
-    "./button": {
-      "types": "./dist/button.d.ts",
-      "import": "./src/button.js"
+    "devDependencies": {
+        "@popperjs/core": "^2.11.8",
+        "@types/bootstrap": "^5.2.10",
+        "shx": "^0.4.0"
     },
-    "./carousel": {
-      "types": "./dist/carousel.d.ts",
-      "import": "./src/carousel.js"
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./src/index.js"
+        },
+        "./alert": {
+            "types": "./dist/alert.d.ts",
+            "import": "./src/alert.js"
+        },
+        "./button": {
+            "types": "./dist/button.d.ts",
+            "import": "./src/button.js"
+        },
+        "./carousel": {
+            "types": "./dist/carousel.d.ts",
+            "import": "./src/carousel.js"
+        },
+        "./collapse": {
+            "types": "./dist/collapse.d.ts",
+            "import": "./src/collapse.js"
+        },
+        "./dropdown": {
+            "types": "./dist/dropdown.d.ts",
+            "import": "./src/dropdown.js"
+        },
+        "./modal": {
+            "types": "./dist/modal.d.ts",
+            "import": "./src/modal.js"
+        },
+        "./offcanvas": {
+            "types": "./dist/offcanvas.d.ts",
+            "import": "./src/offcanvas.js"
+        },
+        "./popover": {
+            "types": "./dist/popover.d.ts",
+            "import": "./src/popover.js"
+        },
+        "./scrollspy": {
+            "types": "./dist/scrollspy.d.ts",
+            "import": "./src/scrollspy.js"
+        },
+        "./tab": {
+            "types": "./dist/tab.d.ts",
+            "import": "./src/tab.js"
+        },
+        "./toast": {
+            "types": "./dist/toast.d.ts",
+            "import": "./src/toast.js"
+        },
+        "./tooltip": {
+            "types": "./dist/tooltip.d.ts",
+            "import": "./src/tooltip.js"
+        },
+        "./init/alert": {
+            "import": "./src/init/alert.js"
+        },
+        "./init/button": {
+            "import": "./src/init/button.js"
+        },
+        "./init/carousel": {
+            "import": "./src/init/carousel.js"
+        },
+        "./init/collapse": {
+            "import": "./src/init/collapse.js"
+        },
+        "./init/dropdown": {
+            "import": "./src/init/dropdown.js"
+        },
+        "./init/modal": {
+            "import": "./src/init/modal.js"
+        },
+        "./init/offcanvas": {
+            "import": "./src/init/offcanvas.js"
+        },
+        "./init/popover": {
+            "import": "./src/init/popover.js"
+        },
+        "./init/scrollspy": {
+            "import": "./src/init/scrollspy.js"
+        },
+        "./init/tab": {
+            "import": "./src/init/tab.js"
+        },
+        "./init/toast": {
+            "import": "./src/init/toast.js"
+        },
+        "./init/tooltip": {
+            "import": "./src/init/tooltip.js"
+        }
     },
-    "./collapse": {
-      "types": "./dist/collapse.d.ts",
-      "import": "./src/collapse.js"
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/supercat1337/bootstrap-esm"
     },
-    "./dropdown": {
-      "types": "./dist/dropdown.d.ts",
-      "import": "./src/dropdown.js"
+    "homepage": "https://github.com/supercat1337/bootstrap-esm#readme",
+    "bugs": {
+        "url": "https://github.com/supercat1337/bootstrap-esm/issues"
     },
-    "./modal": {
-      "types": "./dist/modal.d.ts",
-      "import": "./src/modal.js"
+    "keywords": [
+        "bootstrap",
+        "esm",
+        "tree-shaking",
+        "modules",
+        "ui",
+        "components",
+        "typescript",
+        "drop-in replacement"
+    ],
+    "author": {
+        "name": "Albert Bazaleev"
     },
-    "./offcanvas": {
-      "types": "./dist/offcanvas.d.ts",
-      "import": "./src/offcanvas.js"
-    },
-    "./popover": {
-      "types": "./dist/popover.d.ts",
-      "import": "./src/popover.js"
-    },
-    "./scrollspy": {
-      "types": "./dist/scrollspy.d.ts",
-      "import": "./src/scrollspy.js"
-    },
-    "./tab": {
-      "types": "./dist/tab.d.ts",
-      "import": "./src/tab.js"
-    },
-    "./toast": {
-      "types": "./dist/toast.d.ts",
-      "import": "./src/toast.js"
-    },
-    "./tooltip": {
-      "types": "./dist/tooltip.d.ts",
-      "import": "./src/tooltip.js"
-    },
-    "./init/alert": {
-      "import": "./src/init/alert.js"
-    },
-    "./init/button": {
-      "import": "./src/init/button.js"
-    },
-    "./init/carousel": {
-      "import": "./src/init/carousel.js"
-    },
-    "./init/collapse": {
-      "import": "./src/init/collapse.js"
-    },
-    "./init/dropdown": {
-      "import": "./src/init/dropdown.js"
-    },
-    "./init/modal": {
-      "import": "./src/init/modal.js"
-    },
-    "./init/offcanvas": {
-      "import": "./src/init/offcanvas.js"
-    },
-    "./init/popover": {
-      "import": "./src/init/popover.js"
-    },
-    "./init/scrollspy": {
-      "import": "./src/init/scrollspy.js"
-    },
-    "./init/tab": {
-      "import": "./src/init/tab.js"
-    },
-    "./init/toast": {
-      "import": "./src/init/toast.js"
-    },
-    "./init/tooltip": {
-      "import": "./src/init/tooltip.js"
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/supercat1337/bootstrap-esm"
-  },
-  "homepage": "https://github.com/supercat1337/bootstrap-esm#readme",
-  "bugs": {
-    "url": "https://github.com/supercat1337/bootstrap-esm/issues"
-  },
-  "keywords": [
-    "bootstrap",
-    "esm",
-    "tree-shaking",
-    "modules",
-    "ui",
-    "components",
-    "typescript",
-    "drop-in replacement"
-  ],
-  "author": {
-    "name": "Albert Bazaleev"
-  },
-  "license": "MIT"
+    "license": "MIT"
 }

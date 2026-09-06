@@ -1,1 +1,1 @@
-export { default } from './types/tab';
+export { default } from './types/tab.ts';

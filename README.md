@@ -1,10 +1,10 @@
 # Bootstrap ESM with Tree‑Shaking
 
-This package provides [Bootstrap](https://getbootstrap.com/) v5.3.8 as **native ECMAScript modules** (ESM) with **optimal tree‑shaking support**. It is a drop‑in replacement for the official Bootstrap package, but designed to work seamlessly with modern bundlers (Vite, Webpack, Rollup, etc.) that rely on static analysis to eliminate unused code.
+This package provides [Bootstrap](https://getbootstrap.com/) as **native ECMAScript modules** (ESM) with **optimal tree‑shaking support**. It is a drop‑in replacement for the official Bootstrap package, but designed to work seamlessly with modern bundlers (Vite, Webpack, Rollup, etc.) that rely on static analysis to eliminate unused code.
 
-Unlike the official Bootstrap package, which often forces the entire library into your bundle due to side‑effects and monolithic entry points, this package **exports each component as a separate module**. You import only what you actually use, and the rest is left out – saving bandwidth and improving load times.
+## Versioning
 
----
+This package follows the **major and minor version numbers of Bootstrap** (e.g., `5.3.x`). The patch version indicates compatibility with Bootstrap's patch releases, but it is **not guaranteed to match the exact Bootstrap patch** – we may skip patches or include additional fixes. Always use the latest version of this package to get the most up-to-date tree‑shaking optimisations, type definitions, and bug fixes. If you require a specific Bootstrap patch, you can check the source code or the version mapping in the package's changelog. In practice, Bootstrap's patch releases are backward‑compatible, so this package should work with any 5.3.x version of Bootstrap's CSS.
 
 ## Motivation
 
@@ -29,7 +29,7 @@ As a result, if you import only `Alert`, only the code for `Alert` and its direc
 npm install @supercat1337/bootstrap-esm @popperjs/core
 ```
 
-> **Note:** `@popperjs/core` is a peer dependency – you must install it separately because `Dropdown`, `Tooltip`, and `Popover` rely on Popper.
+> **Note:** `@popperjs/core` is a **peer dependency** – you must install it separately because `Dropdown`, `Tooltip`, and `Popover` rely on Popper.
 
 If you use Bootstrap's CSS, you still need to include it (e.g. via `bootstrap/dist/css/bootstrap.css` or a CDN). This package provides **JavaScript only**.
 
@@ -103,9 +103,19 @@ But remember: **importing from the root entry imports all component modules**, w
 
 ---
 
+## TypeScript support
+
+This package includes **accurate, community‑maintained TypeScript definitions** sourced from [@types/bootstrap](https://www.npmjs.com/package/@types/bootstrap). Each component export is accompanied by its own `.d.ts` file (e.g., `dist/alert.d.ts`), and the root `dist/index.d.ts` re‑exports all types.
+
+You get full autocompletion and type checking for all public APIs without any extra configuration.
+
+---
+
 ## Why not use the official package?
 
 The official Bootstrap package is excellent, but **tree‑shaking rarely works** in practice. Even if you import only specific components, the monolithic structure and side‑effects keep the full library in your bundle. This package is **purpose‑built** to enable efficient tree‑shaking, giving you significant savings in bundle size.
+
+---
 
 ## License & Credits
 
@@ -113,9 +123,3 @@ The official Bootstrap package is excellent, but **tree‑shaking rarely works**
 - Modifications and packaging for this ESM distribution are copyright (c) 2026 Albert Bazaleev, also released under the MIT license.
 
 See the [LICENSE](./LICENSE) file for full terms.
-
----
-
-## Contributing
-
-Issues and pull requests are welcome at the [GitHub repository](https://github.com/supercat1337/bootstrap-esm).

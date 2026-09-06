@@ -1,1 +1,1 @@
-export { default } from './types/offcanvas';
+export { default } from './types/offcanvas.ts';

@@ -1,1 +1,1 @@
-export { default } from './types/modal';
+export { default } from './types/modal.ts';

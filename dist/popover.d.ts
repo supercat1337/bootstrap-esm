@@ -1,1 +1,1 @@
-export { default } from './types/popover';
+export { default } from './types/popover.ts';
