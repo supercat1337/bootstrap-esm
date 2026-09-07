@@ -1,1 +1,1 @@
-export { default } from './types/tooltip.ts';
+export { default } from './types/tooltip.js';

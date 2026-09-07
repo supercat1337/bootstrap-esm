@@ -1,5 +1,5 @@
-import BaseComponent, { GetOrCreateInstanceFactory } from "./base-component";
-import { GetInstanceFactory } from "./base-component.d";
+import BaseComponent, { GetOrCreateInstanceFactory } from "./base-component.js";
+import { GetInstanceFactory } from "./base-component.js";
 
 declare global {
     interface JQuery {

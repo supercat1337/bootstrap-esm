@@ -1,5 +1,5 @@
 import * as Popper from "@popperjs/core";
-import BaseComponent, { GetInstanceFactory, GetOrCreateInstanceFactory } from "./base-component";
+import BaseComponent, { GetInstanceFactory, GetOrCreateInstanceFactory } from "./base-component.js";
 
 declare global {
     interface JQuery {

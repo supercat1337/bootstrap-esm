@@ -1,1 +1,1 @@
-export { default } from './types/collapse.ts';
+export { default } from './types/collapse.js';

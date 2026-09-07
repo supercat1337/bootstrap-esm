@@ -1,1 +1,1 @@
-export { default } from './types/dropdown.ts';
+export { default } from './types/dropdown.js';

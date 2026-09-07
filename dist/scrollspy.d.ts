@@ -1,1 +1,1 @@
-export { default } from './types/scrollspy.ts';
+export { default } from './types/scrollspy.js';

@@ -1,5 +1,5 @@
-import BaseComponent, { GetInstanceFactory, GetOrCreateInstanceFactory } from "./base-component";
-import Tooltip from "./tooltip";
+import BaseComponent, { GetInstanceFactory, GetOrCreateInstanceFactory } from "./base-component.js";
+import Tooltip from "./tooltip.js";
 
 declare global {
     interface JQuery {

@@ -1,1 +1,1 @@
-export { default } from './types/alert.ts';
+export { default } from './types/alert.js';

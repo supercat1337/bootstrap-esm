@@ -1,1 +1,1 @@
-export { default } from './types/carousel.ts';
+export { default } from './types/carousel.js';

@@ -1,1 +1,1 @@
-export { default } from './types/toast.ts';
+export { default } from './types/toast.js';
