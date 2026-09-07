@@ -1,6 +1,6 @@
 {
     "name": "@supercat1337/bootstrap-esm",
-    "version": "5.3.11",
+    "version": "5.3.12",
     "description": "Bootstrap as native ESM modules with true tree-shaking and full TypeScript support",
     "type": "module",
     "main": "./src/index.js",
